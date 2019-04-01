@@ -1,18 +1,19 @@
 #include<iostream>
 #include<fstream>
-#include<windows.h>
+#include<windows.h>//to perform directory change
 
 using namespace std;
 
 
-int main(){
-
+class fileCopyMaker{
+    public:
+int CopyMaker(string fileNam){
     ifstream fin;
     string stringFin;
 
-    fin.open("ak.txt");
+    fin.open(fileNam.c_str());
     stringFin = (char)fin.get();
-    while(fin){
+    while(!fin.eof()){
             stringFin = stringFin + (char)fin.get(); //getting char and storing in string
 
     }
@@ -26,4 +27,6 @@ int main(){
 
     fout<<stringFin;
 
+return 0;
 }
+};
