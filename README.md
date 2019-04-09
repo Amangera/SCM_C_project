@@ -9,18 +9,18 @@ This will be a c++ based project with concept on file handling. Anyone can simpl
 
 ## Branching strategy
 
-   Only owner of the repo has the rights to update master branch.
-   No one will work directly in master branch.
-   Contributer will work on seperate branch and then ask for pull request.
+   * Only owner of the repo has the rights to update master branch.
+   * No one will work directly in master branch.
+   * Contributer will work on seperate branch and then ask for pull request.
    
 ## Functions of VCS :
-   initialization
-   add
-   commit
+   * initialization
+   * add
+   * commit
   
  ### Try to implement :
-   status
-   log
+   * status
+   * log
 
 
 Try to handle exceptions after MVP
