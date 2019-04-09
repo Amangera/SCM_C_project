@@ -26,6 +26,9 @@ int CopyMaker(string fileNam, string copyName , string copyLocation){  //redefin
     fout.open( copyName.c_str() , ios::ate);       // opening file in update mode
 
     fout<<stringFin;
+
+    fin.close();
+    fout.close();
 return 0;
 }
 };

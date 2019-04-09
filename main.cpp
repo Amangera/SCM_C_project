@@ -2,6 +2,8 @@
 #include "createFile.h"
 #include "fileCopyMaker.h"
 #include "VCS_initialization.h"
+#include "fileMover.h"
+#include "commit maker.h"
 
 using namespace std;
 
@@ -18,22 +20,31 @@ int main(){
     
      VCSInitialize obj2;  //obj2 to initialize directory VCS
      fileCopyMaker obj3;   //obj3 to copy files
+     fileMover obj4;        //obj4 to moveFiles
+     CommitMaker obj5;      //obj5 to make commits
+
      string fileName;
+     string copyName;
+     string getfileName;
 
     obj2.VCSinitialize();
+//<<<<<<< collab_aka
     switch(choice)
     {
        case 0:
 	       {
        CreatingFil obj1;    //obj1 to create file
-       fileName = obj1.CreateFil();
-       break;
+       getfileName = obj1.CreateFil();
+       fileName = getfileName;
+        break;
 	       }
        case 1:
 	       {
-        string copyName = fileName + "1" +  ".txt";
+       copyName = fileName + "1" +  ".txt";   
+     //to add file to stagged area
+        copyName = fileName + "1" +  ".txt";
+//>>>>>>> dev_akash
         fileName = fileName + ".txt";
-
         obj3.CopyMaker(fileName,copyName , "stagedFiles" );  //sending redefined arguments
        break;
     }
@@ -43,10 +54,17 @@ int main(){
     }
 
 
-//cout<<" \n Enter the name of file to be added :";
-
-  //      cin>>fileName;
     cout<<"\n"<<fileName;
+//MODIFICATION REQUIRED
+    cout<<endl<<"Press 1 to commit and 0 to continue :";
+    int choice;
+    cin>>choice;
+    if(choice = 1){
+
+        obj5.commit("first Commit." , 1);
+        obj4.Mover( copyName , "MovedFile.txt" , "unmodifiedFiles" , "stagedFiles" );
+
+    }
 
 
 
